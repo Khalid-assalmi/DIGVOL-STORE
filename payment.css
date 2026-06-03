@@ -1,0 +1,147 @@
+.peymentCheckBox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 27%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: appear 0.2s linear forwards;
+    border-top: 2px solid #dab514;
+    box-shadow: 0 0 10px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    flex-direction: column;
+    gap: 16px;
+    line-height: 1px;
+}
+#questionForPayment {
+    position: fixed;
+    top: 30px;
+    font-size: 21px;
+}
+.peymentInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
+}
+.buttons {
+    display: flex;
+    gap: 9px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    box-sizing: border-box;
+}
+.buttons button {
+    background-color: var(--addBtn-bg);
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    height: 34px;
+    padding: 0 14px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+.buttons button:hover {
+    background-color: var(--addBtn-hover-bg);
+}
+#cancelPeyment, #sendOrderAgain {
+    background-color: rgba( 0, 0, 0, 0.1);
+    color: #222;
+}
+#cancelPeyment:hover, #sendOrderAgain:hover {
+    border: 1px solid #222;
+}
+.total.totalClassInPaymentPage {
+    position: fixed;
+    bottom: 0;
+}
+.finallyPeymentCheckBox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: appear 0.2s linear forwards;
+    border-top: 2px solid #dab514;
+    box-shadow: 0 0 10px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    flex-direction: column;
+    gap: 16px;
+}
+.peymentInfo.finallyCheckPaymentInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5px;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+}
+@media (max-width: 680px) {
+    .peymentInfo.finallyCheckPaymentInfo {
+        font-size: 17px;
+    }
+    #confirmForSendTheOrder {
+        padding: 0 20px;
+    }
+    #confirmForSendTheOrder a {
+        font-size: 15px;
+        line-height: 30px;
+    }
+}
+@media (min-width: 681px) {
+    .peymentInfo.finallyCheckPaymentInfo {
+        font-size: 20px;
+    }
+    #confirmForSendTheOrder {
+        font-size: 18px;
+    }
+}
+.container {
+    margin-top: 30vh;
+    justify-self: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .circle {
+    width: 21.5vw;
+    height: 21.5vw;
+    max-width: 140px;
+    max-height: 140px;
+    border: 5px solid #5ac51b;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5ac51b;
+    font-size: 60px;
+}
+.container .circle i {
+    animation: checkIconAnim 0.5s linear forwards;
+}
+@keyframes checkIconAnim {
+    from {
+        transform: scale(0);
+        translate: -20px 20px;
+    }
+}

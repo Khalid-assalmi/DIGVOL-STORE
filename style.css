@@ -1,0 +1,504 @@
+:root {
+    --main: #1d1f1c;
+    --font-color: #fed131;
+    --white: #fff;
+    --search-button-hover: #161616;
+    --gray: #c0c0c0;
+    --emptyBox-color: #b9b9b9;
+    --settingCard-hover: #f0f0f0;
+    --nav-btn-hover: #af941a;
+    --favouriteIcon-color: rgb(235, 11, 11);;
+}
+* {
+    font-weight: 600;
+    cursor: default;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 3;
+    color: #222;
+}
+body {
+    overflow-x: hidden;
+}
+button {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+.top {
+    background-color: var(--main);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    gap: 18px;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+.logo a {
+    color: #fff;
+    font-size: 18px;
+    cursor: default;
+}
+input[type="search"] {
+    background-color: var(--white);
+    border: none;
+    outline: none;
+    max-width: 200px;
+    width: 49vw;
+    height: 5.5vh;
+    max-height: 50px;
+    box-sizing: border-box;
+    padding: 0 12px 0 8px;
+    font-size: 17px;
+    cursor: text;
+    border-radius: 25px;
+    z-index: 0;
+    transition: 0.6s;
+    caret-color: #af941a;
+}
+.tools {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 4vh;
+    max-height: 40px;
+}
+.tools button {
+    position: relative;
+    left: 41px;
+    background-color: var(--main);
+    border: 2px solid var(--white);
+    color: var(--white);
+    height: 5.5vh;
+    max-height: 50px;
+    width: 5.5vh;
+    max-width: 50px;
+    border-radius: 50%;
+    font-size: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.tools button:hover {
+    background-color: var(--search-button-hover);
+}
+#searchBackBtn {
+    display: block;
+    position: relative;
+    right: 16px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--main);
+}
+#settingsBtnIcon {
+    color: #fff;
+    cursor: pointer;
+}
+#settingsBtnIcon:hover, #icon:hover {
+    color: var(--nav-btn-hover);
+}
+.offer {
+    width: 98%;
+    max-width: 523px;
+    height: 52vw;
+    max-height: 310px;
+    border: 1px solid var(--main);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+.offer img {
+    border-radius: 11px;
+}
+nav {
+    background-color: var(--main);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#focus {
+    color: var(--font-color);
+}
+b:hover #focus {
+    color: var(--nav-btn-hover);
+}
+b:hover i , b:hover span {
+    color: var(--gray);
+}
+i {
+    color: var(--white);
+    cursor: pointer;
+}
+a {
+    color: var(--gray);
+    cursor: pointer;
+    position: relative;
+}
+.hiddenText {
+    color: var(--white);
+    cursor: pointer;
+}
+b {
+    display: flex;
+    gap: 10px;
+}
+.totalCircle {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    width: 13px;
+    height: 13px;
+    background-color: rgb(235, 11, 11);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.productsContianer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 7vh;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    animation: appear 0.8s linear forwards;
+    z-index: 1;
+    padding-left: 8px;
+    direction: ltr;
+}
+.productCard {
+    width: 43.5vw;
+    max-width: 240px;
+    border-radius: 8px;
+    border: 2px solid var(--main);
+    height: 65vw;
+    max-height: 360px;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    direction: rtl;
+}
+.productsContianer, .searchContianer {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.imgBox {
+    width: 100%;
+    height: 73%;
+    overflow: hidden;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: var(--emptyBox-color);
+    animation: load 1s linear 1s infinite forwards;
+}
+.priceBox {
+    border-radius: 9px;
+    margin-right: 7px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    display: flex;
+    gap: 6px;
+}
+.nameBox {
+    border-radius: 9px;
+    margin-right: 7px;
+    width: 94%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+}
+.productCard .buttons {
+    display: flex;
+    align-self: center;
+    width: 99%;
+    height: 10%;
+    gap: 1%;
+    margin-bottom: 1%;
+}
+.productCard .buttons #addToCart {
+    width: 82%;
+    height: 98%;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 5px;
+    background: var(--font-color);
+    color: var(--main);
+    border: 1px solid var(--main);
+    position: relative;
+    z-index: 3000;
+    cursor: pointer;
+    font-size: 15px;
+}
+.productCard .buttons #addToCart:hover {
+    border: 2px solid var(--nav-btn-hover);
+}
+.productCard .buttons #addToFavourite {
+    width: 16%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+    background: transparent;
+    color: var(--main);
+    border: 1px solid var(--main);
+    position: relative;
+    z-index: 3000;
+    background: var(--settingCard-hover);
+}
+.productCard .buttons #addToFavourite:hover {
+    border: 2px solid var(--nav-btn-hover);
+}
+.productCard .buttons #addToFavourite i {
+    color: var(--favouriteIcon-color);
+}
+.productCard, .productCard img, .productCard .priceBox, .productCard .descriptionBox {
+    cursor: default;
+}
+.searchContianer {
+    width: 100vw;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: appear 0.3s linear forwards;
+    z-index: 1;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    padding-right: 12px;
+    background-color: var(--white);
+    overflow: auto;
+    display: none;
+}
+.notFoundMassege, .loadingBox {
+    color: var(--main);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+}
+.notFoundMassege #searchIcon {
+    display: block;
+    color: var(--main);
+    font-size: 60px;
+    cursor: default;
+}
+.notFoundMassege span, .loadingBox span {
+    margin-top: 60px;
+    font-size: 19px;
+}
+.loadingBox .circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid var(--gray);
+    border-top: 3px solid var(--main);
+    animation: rotate 0.7s linear infinite forwards;
+}
+.settingsBox {
+    position: fixed;
+    top: 42px;
+    right: 24px;
+    background-color: var(--white);
+    animation: appearSettingsBox 0.2s linear forwards;
+    border-radius: 16px;
+    width: 180px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px #222;
+    overflow: hidden;
+    padding: 16px;
+}
+.hide {
+    animation: hideSettingsBox 1s linear reverse forwards;
+}
+.settingCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    cursor: pointer;
+    padding: 0 6px;
+}
+.settingCard a {
+    color: var(--main);
+    animation: none;
+}
+#paymentCard {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+#socialMediaCard {
+    border-bottom: 2px solid;
+}
+#myDataCard {
+    border-bottom: 2px solid;
+}
+.settingCard:hover {
+    background-color: var(--settingCard-hover);
+}
+.settingCard i {
+    color: var(--main)
+}
+.confirmation {
+    position: fixed;
+    top: 32vh;
+    justify-self: center;
+    background-color: var(--white);
+    width: 86vw;
+    height: 35vh;
+    max-width: 420px;
+    max-height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 12px #222;
+}
+.confirmation p {
+    font-size: 14px;
+}
+.confirmation .buttons {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    gap: 8px;
+}
+.confirmation button {
+    background-color: rgb(38, 96, 223);
+    border: none;
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+#noBtn {
+    background-color: #e7e7e7;
+    color: #222;
+}
+.confirmation button:hover {
+    border: 1px solid #222;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+}
+@keyframes hide {
+    to {
+        opacity: 0;
+        translate: 0 100px;
+    }
+}
+@keyframes appearSettingsBox {
+    from {
+        translate: 16px -16px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+@keyframes hideSettingsBox {
+    to {
+        translate: 16px -16px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+@keyframes load {
+    0% {
+        background: linear-gradient(to right bottom, #d3d3d3, var(--gray), var(--gray), var(--gray), var(--gray));
+    }
+    20% {
+        background: linear-gradient(to right bottom, var(--gray), #d3d3d3, var(--gray), var(--gray), var(--gray));
+    }
+    40% {
+        background: linear-gradient(to right bottom, var(--gray), var(--gray), #d3d3d3, var(--gray), var(--gray));
+    }
+    60% {
+        background: linear-gradient(to right bottom, var(--gray), var(--gray), var(--gray), #d3d3d3, var(--gray));
+    }
+    80% {
+        background: linear-gradient(to right bottom, var(--gray), var(--gray), var(--gray), var(--gray), #d3d3d3);
+    }
+    100% {
+        background: linear-gradient(to right bottom, var(--gray));
+    }
+}
+@keyframes rotate {
+    to {
+        rotate: 360deg;
+    }
+}
+@media (max-width: 680px) {
+    .logo a {
+        display: none;
+    }
+    .hiddenText {
+        display: none;
+    }
+    nav {
+        gap: 14vw;
+    }
+}
+@media (min-width: 681px) {
+    .logo a {
+        display: inline;
+    }
+    span {
+        display: block;
+    }
+    nav {
+        gap: 12vw;
+    }
+}

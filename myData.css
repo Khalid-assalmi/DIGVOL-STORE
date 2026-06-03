@@ -1,0 +1,108 @@
+:root {
+    --main: #111;
+    --font-color: #dab514;
+    --white: #fff;
+    --search-button-hover: #161616;
+    --gray: #c0c0c0;
+    --settingsBtn-hover: #af941a;
+    --emptyBox-color: #b9b9b9;
+    --settingCard-hover: #f0f0f0;
+    --signInBtn-bg: rgb(235, 11, 11);
+    --signInBtn-hover-bg: rgb(255, 20, 20);
+}
+body {
+    cursor: default;
+}
+button {
+    cursor: pointer;
+}
+.top {
+    background-color: var(--main);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 10px;
+    display: flex;
+    gap: 14px;
+}
+.backBtn {
+    background-color: transparent;
+    border: none;
+    color: var(--font-color);
+    font-size: 20px;
+}
+.top h3 {
+    color: #fff;
+    font-size: 20px;
+}
+.inputs {
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 98vw;
+}
+.inputs h4 {
+    margin-bottom: 30px;
+}
+.inputs div {
+    display: flex;
+    width: 72vw;
+    max-width: 450px;
+    border: 2px solid var(--gray);
+    padding: 2px 11px;
+    height: 5vh;
+    max-height: 40px;
+    align-items: center;
+    border-radius: 7px;
+}
+input, select {
+    padding: 6px;
+    width: 65vw;
+    max-width: 450px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+select {
+    width: 77vw;
+    max-width: 475px;
+    border: 2px solid var(--gray);
+    padding: 13px;
+    border-radius: 7px;
+    background-color: transparent;
+}
+.inputs div:focus-within, select:focus {
+    border: 2px solid var(--font-color);
+}
+input:focus, select:focus {
+    outline: none;
+}
+#saveBtn, #deleteBtn, #nextAfterEnterData {
+    background-color: var(--main);
+    color: var(--white);
+    border: none;
+    width: 65vw;
+    max-width: 420px;
+    padding: 12px 0;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+#saveBtn:hover, #deleteBtn:hover, #nextAfterEnterData:hover {
+    background-color: #1a1a1a;
+}
+.conditions, .paymentInfo {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-weight: 600;
+    padding: 12px;
+}
+.conditions p, .paymentInfo p {
+    font-size: 14px;
+}

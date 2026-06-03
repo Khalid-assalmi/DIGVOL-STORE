@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalid's Store</title>
+    <link rel="stylesheet" href="myData.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body dir="rtl">
+    <div class="top">
+        <button class="backBtn" onclick="window.history.go(-1)"><i class="fa-solid fa-arrow-right"></i></button>
+        <h3>إدخال البيانات</h3>
+    </div>
+    <div class="inputs">
+        <h3>- يرجى ملء البيانات الآتية بشكل صحيح :</h3>
+        <div>
+            <input type="text" placeholder="اسم المستخدم" id="nameInput">
+            <label for="nameInput"><i class="fa-solid fa-user"></i></label>
+        </div>
+        <div>
+            <input type="email" placeholder="البريد الإلكتروني" id="emailInput">
+            <label for="emailInput"><i class="fa-solid fa-envelope"></i></label>
+        </div>
+        <div>
+            <input type="text" placeholder="رقم الهاتف" id="phoneInput">
+            <label for="phoneInput"><i class="fa-solid fa-phone"></i></label>
+        </div>
+        <select name="العنوان" id="addressInput">
+            <option value="عدن - المنصورة">عدن - المنصورة</option>
+            <option value="عدن - أبو حربة">عدن - أبو حربة</option>
+            <option value="عدن - كابوتا">عدن - كابوتا</option>
+            <option value="عدن - الشيخ عثمان">عدن - الشيخ عثمان</option>
+        </select>
+        <button id="nextAfterEnterData">التالي</button>
+    </div>
+    <script src="myData.js"></script>
+</body>
+</html>

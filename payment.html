@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalid's Store</title>
+    <link rel="stylesheet" href="myData.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="datas.style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body dir="rtl">
+    <div class="top">
+        <button class="backBtn" onclick="window.history.go(-1)"><i class="fa-solid fa-arrow-right"></i></button>
+        <h3>تأكيد الدفع</h3>
+    </div>
+    <div class="productsContainerInCart"></div>
+    <div class="total totalClassInPaymentPage" id="totalClass">
+        <h3>إجمالي المبلغ:  <span id="total">0</span><span id="cionIcon"> &#xFDFC;</span></h3>
+        <button onclick="confirmPayment()">تأكيد الدفع <i class="fa-regular fa-credit-card"></i></button>
+    </div>
+    <script src="payment.js"></script>
+    <script src="ShoppingCart.js"></script>
+    <script src="script.js"></script>
+    <script src="myData.js"></script>
+    <script src="orders.js"></script>
+</body>
+</html>

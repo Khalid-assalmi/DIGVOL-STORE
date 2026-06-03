@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalid's Store/Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datas.style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body dir="rtl">
+    <div class="top">
+        <div class="tools">
+            <a id="settingsBtn"><i class="fa fa-ellipsis-v" id="settingsBtnIcon"></i></a>
+            <a href="orders.html"><i class="fa fa-truck-fast" id="icon"></i></a>
+        </div>
+    </div>
+    <div class="productsContainerInCart"></div>
+    <div class="total" id="totalClass">
+        <h3>الإجمالي: <span id="total">0</span><span id="cionIcon">&#xFDFC;</span></h3>
+        <button onclick="peymentCheck()" id="peymentBtn">دفع <i class="fa-regular fa-credit-card"></i></button>
+    </div>
+    <nav>
+        <a href="index.html" title="الرئيسية"><b><i class="fa-solid fa-home"></i><span class="hiddenText">الرئيسية</span></b></a>
+        <a href="ShoppingCart.html" title="السلة"><b><i class="fa-solid fa-shopping-cart" id="focus"></i><span id="focus" class="hiddenText">السلة</span></b> <span class="totalCircle" id="totalOfNewProductsInCart">0</span> </a>
+        <a href="favourites.html" title="المفضلة"><b><i class="fa-solid fa-heart"></i><span class="hiddenText">المفضلة</span></b> <span class="totalCircle" id="totalOfNewFavouriteProducts">0</span> </a>
+        <a href="orders.html" title="طلباتي"><b><i class="fa-solid fa-truck-fast"></i><span class="hiddenText">طلباتي</span></b></a>
+        <a href="me.html" title="أنا"><b><i class="fa-solid fa-user"></i><span class="hiddenText">أنا</span></b></a>
+    </nav>
+    <script src="ShoppingCart.js"></script>
+    <script src="script.js"></script>
+    <script src="payment.js"></script>
+    <script src="myData.js"></script>
+</body>
+</html>
