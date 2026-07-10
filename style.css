@@ -214,7 +214,7 @@ b {
     display: none;
 }
 #products {
-    margin-top: 16vh;
+    margin-top: 14vh;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -246,11 +246,11 @@ b {
 
 }
 .filterBtns button {
-    padding: 6px 9px;
+    padding: 4px 9px;
     border: 1px solid var(--main);
     background-color: transparent;
     color: var(--main);
-    border-radius: 26px;
+    border-radius: 22px;
     font-size: 13px;
     white-space: nowrap;
 }
@@ -578,7 +578,7 @@ img {
         z-index: 10;
     }
     .productsContianer , #contianer, .searchContianer {
-        gap: 5px;
+        gap: 10px;
     }
 }
 @media (min-width: 681px) {
