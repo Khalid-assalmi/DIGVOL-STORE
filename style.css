@@ -9,7 +9,6 @@
     --nav-btn-hover: #af941a;
     --favouriteIcon-color: rgb(235, 11, 11);
     --welcomeBox-bg: #ffb834;
-    --filterBtns-bg: #bedff5;
 }
 * {
     font-weight: 600;
@@ -58,7 +57,7 @@ input[type="search"] {
     border: none;
     outline: none;
     max-width: 200px;
-    width: 49vw;
+    width: 90vw;
     height: 5.5vh;
     max-height: 50px;
     box-sizing: border-box;
@@ -113,7 +112,7 @@ input[type="search"] {
 }
 .welcomeBox {
     position: absolute;
-    top: -3vh;
+    top: 70px;
     right: 0;
     left: 0;
     background-color: var(--welcomeBox-bg);
@@ -124,6 +123,7 @@ input[type="search"] {
     border-radius: 0 0 12px 12px;
     height: 7vh;
     box-shadow: 0 0 10px #000000;
+    z-index: -1;
 }
 .welcomeBox p, small {
     font-family: Arial, Helvetica, sans-serif;
@@ -214,7 +214,7 @@ b {
     display: none;
 }
 #products {
-    margin-top: 13vh;
+    margin-top: 16vh;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -235,10 +235,11 @@ b {
     display: flex;
     gap: 8px;
     overflow: auto;
-    background-color: var(--filterBtns-bg);
+    background-color: var(--white);
     padding: 6px 9px;
     width: 100%;
     box-sizing: border-box;
+    border-bottom: 1px solid var(--main);
 }
 .filterBtns::-webkit-scrollbar {
     display: none;
@@ -249,7 +250,7 @@ b {
     border: 1px solid var(--main);
     background-color: transparent;
     color: var(--main);
-    border-radius: 16px;
+    border-radius: 26px;
     font-size: 13px;
     white-space: nowrap;
 }
@@ -258,12 +259,12 @@ b {
     color: var(--white);
 }
 .productCard {
-    width: 45.2vw;
+    width: 49vw;
     max-width: 240px;
     border-radius: 8px;
     box-shadow: 0 0 4px var(--main);
-    height: 72vw;
-    max-height: 360px;
+    height: 78vw;
+    max-height: 380px;
     padding: 2px;
     position: relative;
     overflow: hidden;
@@ -571,12 +572,10 @@ img {
     }
     .filterBtns {
         position: sticky;
-        top: 11vh;
+        top: 70px;
         left: 0;
         right: 0;
         z-index: 10;
-        border-radius: 20px;
-        border: 1px solid var(--main);
     }
     .productsContianer , #contianer, .searchContianer {
         gap: 5px;
@@ -601,7 +600,6 @@ img {
         left: 0;
         right: 0;
         z-index: 10;
-        border-bottom: 1px solid var(--main);
         margin: 5px 0;
         justify-content: center;
     }

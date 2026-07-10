@@ -174,10 +174,10 @@ function search() {
                 if (productName.toLowerCase().includes(searchText.toLowerCase()) || productDes.toLowerCase().includes(searchText.toLowerCase()) || productType.toLowerCase().includes(searchText.toLowerCase())) {
                     setTimeout(() => {
                         searchContianer.innerHTML = "";
-                    }, 1105);
+                    }, 400);
                     setTimeout(() => {
                         searchContianer.innerHTML = "";
-                    }, 1200);
+                    }, 500);
                     setTimeout(() => {
                         searchContianer.innerHTML += `
                         <div class="productCard" onclick="productPage(${i})">
@@ -190,15 +190,17 @@ function search() {
                             </div>
                         </div>
                         `;
-                    }, 1210);
+                    }, 510);
                 } else if (!productName.toLowerCase().includes(searchText.toLowerCase()) || !productDes.toLowerCase().includes(searchText.toLowerCase())){
                     setTimeout(() => {
                         searchContianer.innerHTML = `<div class="notFoundMassege">
                         <i class="fa fa-search" id="searchIcon"></i>
                         <span>لا توجد نتائج بحث متطابقة مع "${searchInp.value.trim()}"</span>
-                        <p>حاول كتابة المنتج بصيغة أخرى</p>
+                        <small style="font-style: normal; margin-top: 21px;">حاول كتابة المنتج بصيغة أخرى أو جرب فعل هذا:</small>
+                        <small style="font-style: normal; margin-top: 7px;">1. كتابة المنتج بالصيغة الفردية بدلاً من الجمع أو العكس ، مثلاً : ساعات -> ساعة</small>
+                        <small style="font-style: normal; margin-top: 7px;">2. التأكد من وجود خطأ إملائي في صيغة المنتج.</small>
                         </div>`;
-                    }, 1199);
+                    }, 480);
                 }
             }
             console.log(searchs);
@@ -234,6 +236,11 @@ function displayProducts(id) {
         `;
     }
 }
+setTimeout(() => {
+    if (!products) {
+        location.reload();
+    }
+})
 let index = sessionStorage.getItem("index");
 function productPage(indexOfProduct) {
     window.location.href = "product.html";
