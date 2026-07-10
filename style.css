@@ -361,7 +361,7 @@ img {
 .searchContianer {
     width: 100vw;
     position: fixed;
-    top: 7vh;
+    top: 6.5vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -370,7 +370,6 @@ img {
     box-sizing: border-box;
     padding-top: 50px;
     padding-bottom: 90px;
-    padding-right: 12px;
     background-color: var(--white);
     overflow: auto;
     display: none;

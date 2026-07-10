@@ -215,7 +215,7 @@ function search() {
 }
 function displayProducts(id) {
     let productsTypeBtn = document.getElementById(id);
-    let type = productsTypeBtn.getAttribute("data-type");
+    let type = () => {if (productsTypeBtn.getAttribute("data-type")) return productsTypeBtn.getAttribute("data-type")};
     let productsType = products.filter(i => productsTypeBtn.id == "allProducts" ? i : i.type == type);
     document.querySelectorAll(".filterBtn.active").forEach(item => {
         item.classList.remove("active");
@@ -240,7 +240,7 @@ setTimeout(() => {
     if (!products) {
         location.reload();
     }
-})
+}, 1000)
 let index = sessionStorage.getItem("index");
 function productPage(indexOfProduct) {
     window.location.href = "product.html";
