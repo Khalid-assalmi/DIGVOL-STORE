@@ -47,7 +47,7 @@ body {
 .productName {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
     transition: 0.3s;
     box-sizing: border-box;
     padding: 0 12px;
@@ -385,8 +385,8 @@ body {
         left: 0;
         right: 0;
         background-color: #fff;
-        box-shadow: 0 0 50px #fff;
-        padding: 4px 58px 24px 58px;
+        box-shadow: 0 0 70px #fff;
+        padding: 0 58px 24px 58px;
     }
 }
 .addedBox, .alertBox {

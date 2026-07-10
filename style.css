@@ -58,7 +58,7 @@ input[type="search"] {
     outline: none;
     max-width: 200px;
     width: 90vw;
-    height: 5.5vh;
+    height: 5vh;
     max-height: 50px;
     box-sizing: border-box;
     padding: 0 16px 0 8px;
@@ -259,7 +259,7 @@ b {
     color: var(--white);
 }
 .productCard {
-    width: 49vw;
+    width: 46vw;
     max-width: 240px;
     border-radius: 8px;
     box-shadow: 0 0 4px var(--main);
@@ -578,8 +578,7 @@ img {
         z-index: 10;
     }
     .productsContianer , #contianer, .searchContianer {
-        gap: 8px;
-        padding-inline-start: 12px;
+        gap: 5px;
     }
 }
 @media (min-width: 681px) {

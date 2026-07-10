@@ -1,15 +1,15 @@
 {
-    "name": "Khalid's Store",
-    "short_name": "Khalid's Store",
+    "name": "DIGVOL STORE",
+    "short_name": "DIGVOL STORE",
     "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#fff",
-    "theme_color": "#111",
+    "background_color": "#1d1f1c",
+    "theme_color": "#1d1f1c",
     "icons": [
         {
-            "src": "logo.png",
+            "src": "Digvol_Logo.jpeg",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/jpeg"
         }
     ]
 }
