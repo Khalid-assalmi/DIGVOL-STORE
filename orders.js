@@ -11,7 +11,7 @@ function displayOrders() {
                     </div>
                     <div class="productInfo">
                         <h3>${orders[index].info[0].price}<span id="cionIcon">&#xFDFC;</span></h3>
-                        <p>${orders[index].info[0].des}</p>
+                        <p>${orders[index].info[0].name}</p>
                         <h6> تاريخ الطلب: ${orders[index].date}</h6>
                     </div>
                     <div><button onclick="productState(${index})"> استلمتُ الطلب؟</button></div>

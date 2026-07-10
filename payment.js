@@ -158,7 +158,7 @@ function displayPurchases() {
                 </div>
                     <div class="productInfo">
                     <h3>${purchases[index].info[0].price}<span id="cionIcon">&#xFDFC;</span></h3>
-                    <p>${purchases[index].info[0].des}</p>
+                    <p>${purchases[index].info[0].name}</p>
                     <h6> تاريخ الطلب: ${purchases[index].date}</h6>
                 </div>
             </div>

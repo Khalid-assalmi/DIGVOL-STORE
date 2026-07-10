@@ -1,0 +1,9 @@
+[
+    {"type": "charger", "keywords": ["شواحن", "شاحن", "توصيلة"]},
+    {"type": "powerbank", "keywords": ["خوازن", "شاحن", "يطارية", "battery"]},
+    {"type": "headphone", "keywords": ["سماعة", "بلوتوث", "سماعات", "head phone", "head phones"]},
+    {"type": "smartwatch", "keywords": ["ساعة ذكية", "ساعة الكترونية", "ساعة جوال", "smart watch", "smart watches"]},
+    {"type": "powerstrip", "keywords": ["توصيلة", "محول", "محول طاقة", "محول كهرباء", "توصيلة كهربائية"]}
+
+
+]

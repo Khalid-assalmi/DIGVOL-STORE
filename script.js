@@ -1,7 +1,7 @@
 let settingsBtn = document.getElementById("settingsBtn");
 let searchInp = document.getElementById("searchInput");
 let searchBtn = document.getElementById("searchButton");
-let productsContianer = document.querySelector(".productsContianer");
+let productsCon = document.querySelector(".productsContianer");
 let div = document.createElement("div");
 div.className = "settingsBox";
 let settingCard = document.createElement("a");
@@ -79,7 +79,7 @@ if (settingsBtn) {
             if (searchInp.value) {
                 searchBtn.style.removeProperty("--main");
             } else {
-                searchBtn.style.setProperty("--main", "#474747");
+                searchBtn.style.setProperty("--main", "#5e5e5e");
             }
         });
     }
@@ -112,6 +112,17 @@ if (settingsBtn) {
         });
     }
 }
+if (productsCon) {
+    fetch("products.json")
+        .then(response => response.json())
+        .then((data) => {
+            localStorage.setItem("products", JSON.stringify(data));
+            displayProducts("allProducts");
+        })
+        .catch(err => console.log(err));
+
+    fetch("")
+}
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let searchContianer = document.querySelector(".searchContianer");
 let timer = null;
@@ -138,6 +149,13 @@ function removeAllDatas() {
 settingCard5.onclick = () => {
     document.body.appendChild(confirmation);
 };
+function clearText(text) {
+    text = text.replaceAll("ة", "ه");
+    text = text.replaceAll("ي", "ى");
+    text = text.replaceAll("أ", "ا");
+    text = text.replaceAll("ال", "");
+    return text;
+}
 function search() {
     if (products.length > 0) {
         searchContianer.innerHTML = `
@@ -149,7 +167,11 @@ function search() {
         clearTimeout(timer);
         timer = setTimeout(() => {
             for (let i = 0; i < products.length; i++) {
-                if (products[i].name.toLowerCase().includes(searchInp.value.trim().toLowerCase()) || products[i].des.toLowerCase().includes(searchInp.value.trim().toLowerCase())) {
+                let searchText = clearText(searchInp.value.trim());
+                let productName = clearText(products[i].name);
+                let productDes = clearText(products[i].des);
+                let productType = clearText(products[i].type)
+                if (productName.toLowerCase().includes(searchText.toLowerCase()) || productDes.toLowerCase().includes(searchText.toLowerCase()) || productType.toLowerCase().includes(searchText.toLowerCase())) {
                     setTimeout(() => {
                         searchContianer.innerHTML = "";
                     }, 1105);
@@ -164,12 +186,12 @@ function search() {
                             <div class="nameBox">${products[i].name}</div>
                             <div class="buttons">
                                 <button onclick="event.stopPropagation();addToCart(${i})" id="addToCart" title="إضافة إلى السة">إضافة إلى السلة</button>
-                                <button onclick="event.stopPropagation();addToFavourite(${i})" id="addToFavourite" title="إضافة إلى المفضلة"><i class="fa-solid fa-heart-circle-plus"></i></button>
+                                <button onclick="event.stopPropagation();addToFavourite(${i})" id="addToFavourite" title="إضافة إلى المفضلة"><i class="fa-regular fa-heart"></i></button>
                             </div>
                         </div>
                         `;
                     }, 1210);
-                } else if (!products[i].des.toLowerCase().includes(searchInp.value.trim().toLowerCase())){
+                } else if (!productName.toLowerCase().includes(searchText.toLowerCase()) || !productDes.toLowerCase().includes(searchText.toLowerCase())){
                     setTimeout(() => {
                         searchContianer.innerHTML = `<div class="notFoundMassege">
                         <i class="fa fa-search" id="searchIcon"></i>
@@ -179,37 +201,38 @@ function search() {
                     }, 1199);
                 }
             }
+            console.log(searchs);
+            localStorage.setItem("searchs", JSON.stringify(searchs));
+            if (searchs.length > 200) {
+                searchs = searchs.splice(0, 150);
+            }
         }, 1200);
     } else {
-        searchContianer.innerHTML = `<div class="notFoundMassege"><i class="fa fa-triangle-exclamation" id="searchIcon"></i><span>حدث خطأ غير مقصود نتج عنه عدم تحميل المنتجات</span></div>`;
+        searchContianer.innerHTML = `<div class="notFoundMassege"><i class="fa fa-triangle-exclamation" id="searchIcon"></i><span>حدث خطأ غير مقصود نتج عنه فشل في الوصول إلى المنتجات</span><button onclick="location.reload()">إصلاح الخطأ</button></div>`;
     }
 }
-function displayProducts() {
-    fetch("products.json")
-        .then(response => response.json())
-        .then((data) => {
-            for (let i = 0; i < data.length*2; i++) {
-                let array = new Uint32Array(1);
-                window.crypto.getRandomValues(array);
-                let index = array[0] % data.length;
-                productsContianer.innerHTML += `
-                <div class="productCard" onclick="productPage(${index})">
-                    <div class="imgBox"><img src="${data[index].img}"></div>
-                    <div class="priceBox"><span>${data[index].price}</span><span id="cionIcon">&#xFDFC;</span></div>
-                    <div class="nameBox">${data[index].name}</div>
-                    <div class="buttons">
-                        <button onclick="event.stopPropagation();addToCart(${index})" id="addToCart" title="إضافة إلى السلة">إضافة إلى السلة</button>
-                        <button onclick="event.stopPropagation();addToFavourite(${index})" id="addToFavourite" title="إضافة إلى المفضلة"><i class="fa-solid fa-heart-circle-plus"></i></button>
-                    </div>
-                </div>
-                `;
-            }
-            localStorage.setItem("products", JSON.stringify(data));
-        })
-        .catch(err => console.log(err));
-}
-if (productsContianer) {
-    displayProducts();
+function displayProducts(id) {
+    let productsTypeBtn = document.getElementById(id);
+    let type = productsTypeBtn.getAttribute("data-type");
+    let productsType = products.filter(i => productsTypeBtn.id == "allProducts" ? i : i.type == type);
+    document.querySelectorAll(".filterBtn.active").forEach(item => {
+        item.classList.remove("active");
+    });
+    productsTypeBtn.classList.add("active")
+    productsCon.innerHTML = "";
+    for (let i = 0; i < productsType.length; i++) {
+        productsCon.innerHTML += `
+        <div class="productCard" onclick="productPage(${i})">
+            <div class="imgBox"><img src="${productsType[i].img}"></div>
+            <div class="priceBox"><span>${productsType[i].price}</span><span id="cionIcon">&#xFDFC;</span></div>
+            <div class="nameBox">${productsType[i].name}</div>
+            <div class="buttons">
+                <button onclick="event.stopPropagation();addToCart(${i})" id="addToCart" title="إضافة إلى السلة">إضافة إلى السلة</button>
+                <button onclick="event.stopPropagation();addToFavourite(${i})" id="addToFavourite" title="إضافة إلى المفضلة"><i class="fa-regular fa-heart"></i></button>
+            </div>
+        </div>
+        `;
+    }
 }
 let index = sessionStorage.getItem("index");
 function productPage(indexOfProduct) {
@@ -220,7 +243,7 @@ if (document.querySelector(".productImage")) {
     document.querySelector(".productImage").innerHTML = `<img class="img" src="${products[index].img}">`;
     document.querySelector(".productName").innerHTML = `<div class="name">${products[index].name}</div><div class="price"><div>${products[index].price}</div><div class="coin"><span id="cionIcon">&#xFDFC;</span></div></div>`;
     document.getElementById("productDes").innerHTML = products[index].des;
-    document.querySelector("#DeliveryLocation").innerHTML = ` موقع التوصيل: ${JSON.parse(localStorage.getItem("info"))[0].address}`;
+    document.querySelector("#DeliveryLocation").innerHTML = ` موقع التوصيل: ${JSON.parse(localStorage.getItem("info")) ? JSON.parse(localStorage.getItem("info"))[0].address :"غير محدد"}`;
     document.querySelector("#Manufacturer").innerHTML = `الشركة المصنعة: ${products[index].company}`;
     if (products[index].specs) {
         document.querySelector("#specs").innerHTML = "المواصفات : <br>" + "<span id='specsText'>" + products[index].specs + "</span>";

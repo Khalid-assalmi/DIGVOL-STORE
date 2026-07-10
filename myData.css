@@ -96,7 +96,7 @@ input:focus, select:focus {
     background-color: #1a1a1a;
 }
 .conditions, .paymentInfo {
-    margin-top: 20vh;
+    margin-top: 16vh;
     display: flex;
     flex-direction: column;
     gap: 12px;

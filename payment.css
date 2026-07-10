@@ -41,7 +41,7 @@
     box-sizing: border-box;
 }
 .buttons button {
-    background-color: var(--addBtn-bg);
+    background-color: var(--mainBtn-bg);
     color: var(--white);
     border: none;
     border-radius: 15px;
@@ -54,7 +54,7 @@
     align-items: center;
 }
 .buttons button:hover {
-    background-color: var(--addBtn-hover-bg);
+    background-color: var(--mainBtn-hover-bg);
 }
 #cancelPeyment, #sendOrderAgain {
     background-color: rgba( 0, 0, 0, 0.1);

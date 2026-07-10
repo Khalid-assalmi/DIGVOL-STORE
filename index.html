@@ -24,9 +24,28 @@
         </div>
     </div>
     <section id="products">
-        <div class="productsContianer">
-            <div class="offer"><img src="pixelWatchAdd.jpeg"></div>
-        </div>
+
+            <div class="welcomeBox" dir="ltr"><small>Welcome to </small><p>Digvol Store</p></div>
+
+            <div style="display: flex; gap: 4vw; margin-top: 35px;">
+                <div class="offer" onclick="sessionStorage.setItem('index', 7); window.location.href='product.html'">
+                    <img src="pixelWatchAdd.jpeg">
+                </div>
+
+                <div class="whoIsDigvolStore">
+                    <h3>ما هو DIGVOL STORE ؟</h3>
+                    <p>DIGVOL STORE هو متجر الكتروني متخصص في بيع أفضل الإكسسوارات بأفضل الأسعار الممكنة ، وتجمعها لك تحت سقف واحد ، وهي إحدى الأقسام التابعة لشركة  DIGVOL Tech التقنية المتخصصة في مجال الإلكترونيات أشهرها قسم DIGVOL Code المتخصص في بناء الأنظمة البرمجية والمواقع الإلكترونية.</p>
+                </div>
+            </div>
+            <div class="filterBtns">
+                <button class="filterBtn" id="allProducts" onclick="displayProducts(this.id)" data-type="all">الكل</button>
+                <button class="filterBtn" id="smartwatch" onclick="displayProducts(this.id)" data-type="smartwatch">الساعات الذكية</button>
+                <button class="filterBtn" id="chargers" onclick="displayProducts(this.id)" data-type="charger">الشواحن</button>
+                <button class="filterBtn" id="headphones" onclick="displayProducts(this.id)" data-type="headphone">سماعات الرأس</button>
+                <button class="filterBtn" id="powerstrips" onclick="displayProducts(this.id)" data-type="powerstrip">التوصيلات الكهربائية</button>
+                <button class="filterBtn" id="powerbankes" onclick="displayProducts(this.id)" data-type="powerbank">خازنات الطاقة</button>
+            </div>
+            <div class="productsContianer" ></div>
         <div class="searchContianer"></div>
     </section>
     <nav>

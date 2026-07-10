@@ -7,12 +7,14 @@
     --emptyBox-color: #b9b9b9;
     --settingCard-hover: #f0f0f0;
     --nav-btn-hover: #af941a;
-    --favouriteIcon-color: rgb(235, 11, 11);;
+    --favouriteIcon-color: rgb(235, 11, 11);
+    --welcomeBox-bg: #ffb834;
+    --filterBtns-bg: #bedff5;
 }
 * {
     font-weight: 600;
     cursor: default;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     z-index: 3;
     color: #222;
 }
@@ -31,7 +33,7 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    padding: 18px 4vw;
+    padding: 16px 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,8 +62,8 @@ input[type="search"] {
     height: 5.5vh;
     max-height: 50px;
     box-sizing: border-box;
-    padding: 0 12px 0 8px;
-    font-size: 17px;
+    padding: 0 16px 0 8px;
+    font-size: 16px;
     cursor: text;
     border-radius: 25px;
     z-index: 0;
@@ -109,17 +111,54 @@ input[type="search"] {
 #settingsBtnIcon:hover, #icon:hover {
     color: var(--nav-btn-hover);
 }
+.welcomeBox {
+    position: absolute;
+    top: -3vh;
+    right: 0;
+    left: 0;
+    background-color: var(--welcomeBox-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 0 0 12px 12px;
+    height: 7vh;
+    box-shadow: 0 0 10px #000000;
+}
+.welcomeBox p, small {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
 .offer {
-    width: 98%;
-    max-width: 523px;
     height: 52vw;
-    max-height: 310px;
+    max-height: 400px;
     border: 1px solid var(--main);
     border-radius: 12px;
-    margin-top: 15px;
+    display: flex;
+    gap: 24px;
+    z-index: 1;
+    background-color: #3a4e61;
+    width: 94vw;
+    max-width: 820px;
+    overflow: hidden;
+    position: relative;
 }
 .offer img {
+    position: absolute;
     border-radius: 11px;
+    width: 100%;
+}
+.whoIsDigvolStore {
+    width: 30vw;
+    max-width:  340px;
+    height: 52vw;
+    max-height: 400px;
+    border: 2px solid var(--gray);
+    outline: 1px solid var(--main);
+    padding: 18px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 16px;
 }
 nav {
     background-color: var(--main);
@@ -174,27 +213,56 @@ b {
     align-items: center;
     display: none;
 }
-.productsContianer {
+#products {
+    margin-top: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: 7vh;
+    z-index: 1;
+    overflow-y: visible;
+    align-items: center;
+}
+.productsContianer {
     box-sizing: border-box;
-    padding-top: 50px;
     padding-bottom: 90px;
     display: flex;
-    justify-content: center;
     animation: appear 0.8s linear forwards;
-    z-index: 1;
-    padding-left: 8px;
-    direction: ltr;
+}
+.filterBtns {
+    display: flex;
+    gap: 8px;
+    overflow: auto;
+    background-color: var(--filterBtns-bg);
+    padding: 6px 9px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.filterBtns::-webkit-scrollbar {
+    display: none;
+
+}
+.filterBtns button {
+    padding: 6px 9px;
+    border: 1px solid var(--main);
+    background-color: transparent;
+    color: var(--main);
+    border-radius: 16px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.filterBtn.active {
+    background-color: var(--main);
+    color: var(--white);
 }
 .productCard {
-    width: 43.5vw;
+    width: 45.2vw;
     max-width: 240px;
     border-radius: 8px;
-    border: 2px solid var(--main);
-    height: 65vw;
+    box-shadow: 0 0 4px var(--main);
+    height: 72vw;
     max-height: 360px;
     padding: 2px;
     position: relative;
@@ -203,16 +271,15 @@ b {
     display: flex;
     flex-direction: column;
     gap: 2%;
-    direction: rtl;
 }
-.productsContianer, .searchContianer {
-    gap: 18px;
+.productsContianer , #contianer, .searchContianer {
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding: 4px 9px 90px;
 }
 .imgBox {
     width: 100%;
-    height: 73%;
+    height: 70%;
     overflow: hidden;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -246,10 +313,10 @@ img {
 .productCard .buttons {
     display: flex;
     align-self: center;
-    width: 99%;
+    width: 97%;
     height: 10%;
     gap: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 1.5%;
 }
 .productCard .buttons #addToCart {
     width: 82%;
@@ -274,7 +341,7 @@ img {
     border-radius: 10px;
     border: none;
     margin-bottom: 5px;
-    background: transparent;
+    background: #fff !important;
     color: var(--main);
     border: 1px solid var(--main);
     position: relative;
@@ -282,7 +349,7 @@ img {
     background: var(--settingCard-hover);
 }
 .productCard .buttons #addToFavourite:hover {
-    border: 2px solid var(--nav-btn-hover);
+    border: 2px solid var(--main);
 }
 .productCard .buttons #addToFavourite i {
     color: var(--favouriteIcon-color);
@@ -293,12 +360,12 @@ img {
 .searchContianer {
     width: 100vw;
     position: fixed;
-    top: 8vh;
+    top: 7vh;
     left: 0;
     right: 0;
     bottom: 0;
     animation: appear 0.3s linear forwards;
-    z-index: 1;
+    z-index: 100;
     box-sizing: border-box;
     padding-top: 50px;
     padding-bottom: 90px;
@@ -324,7 +391,15 @@ img {
 }
 .notFoundMassege span, .loadingBox span {
     margin-top: 60px;
-    font-size: 19px;
+    font-size: 16px;
+}
+.notFoundMassege button {
+    margin-top: 32px;
+    padding: 7px 12px;
+    background-color: var(--main);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
 }
 .loadingBox .circle {
     width: 65px;
@@ -341,8 +416,8 @@ img {
     background-color: var(--white);
     animation: appearSettingsBox 0.2s linear forwards;
     border-radius: 16px;
-    width: 180px;
-    height: 200px;
+    width: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -362,6 +437,7 @@ img {
     height: 25%;
     cursor: pointer;
     padding: 0 6px;
+    font-size: 14px;
 }
 .settingCard a {
     color: var(--main);
@@ -388,9 +464,9 @@ img {
     top: 32vh;
     justify-self: center;
     background-color: var(--white);
-    width: 86vw;
+    width: 90vw;
     height: 35vh;
-    max-width: 420px;
+    max-width: 480px;
     max-height: 300px;
     padding: 20px;
     box-sizing: border-box;
@@ -490,6 +566,21 @@ img {
     nav {
         gap: 14vw;
     }
+    .whoIsDigvolStore {
+        display: none;
+    }
+    .filterBtns {
+        position: sticky;
+        top: 11vh;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        border-radius: 20px;
+        border: 1px solid var(--main);
+    }
+    .productsContianer , #contianer, .searchContianer {
+        gap: 5px;
+    }
 }
 @media (min-width: 681px) {
     .logo a {
@@ -500,5 +591,22 @@ img {
     }
     nav {
         gap: 12vw;
+    }
+    .welcomeBox {
+        display: none;
+    }
+    .filterBtns {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--main);
+        margin: 5px 0;
+        justify-content: center;
+    }
+    .productsContianer , #contianer, .searchContianer {
+        gap: 18px;
+        padding-inline-start: 25px;
     }
 }
