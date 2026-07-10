@@ -197,7 +197,7 @@ function search() {
                         <i class="fa fa-search" id="searchIcon"></i>
                         <span>لا توجد نتائج بحث متطابقة مع "${searchInp.value.trim()}"</span>
                         <small style="font-style: normal; margin-top: 21px;">حاول كتابة المنتج بصيغة أخرى أو جرب فعل هذا:</small>
-                        <small style="font-style: normal; margin-top: 7px;">1. كتابة المنتج بالصيغة الفردية بدلاً من الجمع أو العكس ، مثلاً : ساعات -> ساعة</small>
+                        <small style="font-style: normal; margin-top: 7px;">1. كتابة المنتج بالصيغة الفردية بدلاً من الجمع أو العكس.</small>
                         <small style="font-style: normal; margin-top: 7px;">2. التأكد من وجود خطأ إملائي في صيغة المنتج.</small>
                         </div>`;
                     }, 480);

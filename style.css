@@ -82,7 +82,7 @@ input[type="search"] {
     background-color: var(--main);
     border: 2px solid var(--white);
     color: var(--white);
-    height: 5.5vh;
+    height: 5vh;
     max-height: 50px;
     width: 5.5vh;
     max-width: 50px;
@@ -392,7 +392,7 @@ img {
 }
 .notFoundMassege span, .loadingBox span {
     margin-top: 60px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .notFoundMassege button {
     margin-top: 32px;
