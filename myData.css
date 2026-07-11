@@ -1,5 +1,5 @@
 :root {
-    --main: #111;
+    --main: #1d1f1c;
     --font-color: #dab514;
     --white: #fff;
     --search-button-hover: #161616;
@@ -9,9 +9,17 @@
     --settingCard-hover: #f0f0f0;
     --signInBtn-bg: rgb(235, 11, 11);
     --signInBtn-hover-bg: rgb(255, 20, 20);
+    --largest-fonst-size: 30px;
+    --larger-font-size: 24px;
+    --large-font-size: 22px;
+    --middle-font-size: 18px;
+    --small-font-size: 16px;
+    --smaller-font-size: 14px;
+    --smallest-font-size: 10px;
 }
 body {
     cursor: default;
+    margin: 0;
 }
 button {
     cursor: pointer;
@@ -25,6 +33,8 @@ button {
     padding: 5px 10px;
     display: flex;
     gap: 14px;
+    z-index: 10;
+    border-bottom: 1px solid var(--white);
 }
 .backBtn {
     background-color: transparent;
@@ -33,8 +43,8 @@ button {
     font-size: 20px;
 }
 .top h3 {
-    color: #fff;
-    font-size: 20px;
+    color: var(--white);
+    font-size: var(--middle-font-size);
 }
 .inputs {
     margin-top: 25vh;
@@ -46,6 +56,7 @@ button {
 }
 .inputs h4 {
     margin-bottom: 30px;
+    font-size: var(--small-font-size);
 }
 .inputs div {
     display: flex;
@@ -56,6 +67,7 @@ button {
     height: 5vh;
     max-height: 40px;
     align-items: center;
+    justify-content: space-between;
     border-radius: 7px;
 }
 input, select {
@@ -64,7 +76,8 @@ input, select {
     max-width: 450px;
     border: none;
     font-weight: 600;
-    font-size: 16px;
+    font-size: var(--small-font-size);
+    background-color: transparent;
 }
 select {
     width: 77vw;
@@ -72,7 +85,6 @@ select {
     border: 2px solid var(--gray);
     padding: 13px;
     border-radius: 7px;
-    background-color: transparent;
 }
 .inputs div:focus-within, select:focus {
     border: 2px solid var(--font-color);
@@ -81,21 +93,21 @@ input:focus, select:focus {
     outline: none;
 }
 #saveBtn, #deleteBtn, #nextAfterEnterData {
-    background-color: var(--main);
-    color: var(--white);
+    background-color: #161616;
+    color: #FFFFFF;
     border: none;
     width: 65vw;
     max-width: 420px;
     padding: 12px 0;
-    font-size: 16px;
+    font-size: var(--small-font-size);
     margin-top: 20px;
     border-radius: 12px;
     font-weight: 600;
 }
 #saveBtn:hover, #deleteBtn:hover, #nextAfterEnterData:hover {
-    background-color: #1a1a1a;
+    background-color: #242424;
 }
-.conditions, .paymentInfo {
+.conditions, .paymentInfo, .settings {
     margin-top: 16vh;
     display: flex;
     flex-direction: column;
@@ -104,5 +116,108 @@ input:focus, select:focus {
     padding: 12px;
 }
 .conditions p, .paymentInfo p {
-    font-size: 14px;
+    font-size: var(--smaller-font-size);
+}
+.settings .fontSize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.fontSize h3, .customizeUI h3 {
+    align-self: flex-start;
+    margin-bottom: -1px;
+    font-size: var(--middle-font-size);
+}
+.settings .fontSizeInfo input {
+    accent-color: #1d1f1c;
+    cursor: pointer;
+    width: 85%;
+    max-width: 400px;
+    padding: 0;
+}
+#big {
+    font-size: var(--large-font-size);
+}
+#min {
+    font-size: var(--smaller-font-size);
+}
+.fontSize .fontSizeInfo {
+    width: 85%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.textBox {
+    font-size: var(--middle-font-size);
+}
+.settings hr {
+    width: 100%;
+}
+.settings .customizeUI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.customizeUICard {
+    padding: 5px 5px 10px 5px;
+    border: 1px solid var(--gray);
+    width: 95%;
+    height: 19vh;
+    max-height: 135px;
+    max-width: 500px;
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.customizeUICard.main, .customizeProductCard div .card.main {
+    border-color:rgb(38, 96, 223);
+    border-width: 2px;
+}
+.customizeUICard img {
+    width: 15vh;
+    max-width: 100px;
+    height: 100%;
+    border-radius: 10px;
+}
+.customizeUICard:hover, .customizeProductCard div .card:hover {
+    transform: scale(1.02);
+    border-color: var(--search-button-hover);
+}
+.customizeUICard div h4 {
+    font-size: var(--small-font-size);
+}
+.customizeUICard div small {
+    font-size: var(--smaller-font-size);
+}
+.customizeProductCard h3 {
+    font-size: var(--middle-font-size);
+}
+.customizeProductCard div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.customizeProductCard div .card {
+    width: 40vw;
+    height: 56vw;
+    max-width: 210px;
+    max-height: 310px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #1d1f1c;
+    padding: 12px;
+    color: #FFFFFF;
+    font-size: var(--small-font-size);
 }

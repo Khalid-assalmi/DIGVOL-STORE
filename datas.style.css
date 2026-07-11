@@ -6,9 +6,16 @@
     --mainBtn-bg: rgb(235, 11, 11);
     --mainBtn-hover-bg: rgb(255, 20, 20);
     --white: #fff;
+    --largest-fonst-size: 30px;
+    --larger-font-size: 24px;
+    --large-font-size: 22px;
+    --middle-font-size: 18px;
+    --small-font-size: 16px;
+    --smaller-font-size: 14px;
+    --smallest-font-size: 10px;
 }
 body {
-    background-color: var(--white);
+    background-color: #FFFFFF;
 }
 * {
     font-weight: 600;
@@ -91,7 +98,7 @@ body {
     color: var(--white);
     border: none;
     cursor: pointer;
-    font-size: 17px;
+    font-size: var(--middle-font-size);
     transition: 0.3s;
     display: flex;
     justify-content: center;
@@ -134,11 +141,14 @@ body {
     font-size: 76px;
     color: var(--emptyBox-color);
 }
+.empty h3 {
+    font-size: var(--middle-font-size);
+}
 .productInCartCard {
     width: 95vw;
     min-height: 130px;
     box-sizing: border-box;
-    background-color: var(--white);
+    background-color: transparent;
     border: 1px solid var(--emptyBox-color);
     display: flex;
     justify-content: flex-start;
@@ -166,13 +176,13 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 17px;
+    font-size: var(--middle-font-size);
     cursor: pointer;
 }
 .productInfo p {
     position: absolute;
     top: 8px;
-    font-size: 22px;
+    font-size: var(--large-font-size);
     height: 26x;
     display: flex;
     align-items: center;
@@ -187,18 +197,19 @@ body {
     position: absolute;
     top: 32px;
     left: 15px;
-    background-color: var(--white);
-    border: 1px solid var(--main);
+    background-color: transparent;
+    border: 1px solid #1d1f1c;
     border-radius: 21px;
     padding: 1px 4px;
     display: flex;
     gap: 3px;
+    align-items: center;
 }
 .count button {
     border-radius: 19px;
     border: none;
-    background-color: var(--white);
-    font-size: 16px;
+    background-color: transparent;
+    font-size: var(--small-font-size);
 }
 .total {
     position: fixed;
@@ -221,6 +232,7 @@ body {
     align-items: center;
     gap: 5px;
     color: var(--main);
+    font-size: var(--middle-font-size);
 }
 .total button {
     background-color: var(--mainBtn-bg);
@@ -228,7 +240,7 @@ body {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--small-font-size);
     padding: 5px 14px;
     transition: 0.3s;
     display: flex;
@@ -263,36 +275,36 @@ body {
         border-bottom: 2px solid var(--backBtn-hover-bg);
     }
     .name {
-        font-size: 17px;
+        font-size: var(--middle-font-size);
     }
     .price {
         align-items: flex-end;
-        font-size: 21px;
+        font-size: var(--large-font-size);
     }
     .coin {
-        font-size: 21px;
+        font-size: var(--large-font-size);
     }
     .description {
         position: absolute;
         top: 78vh;
         right: 30px;
-        font-size: 29px;
+        font-size: var(--largest-fonst-size);
         width: 90vw;
         padding-bottom: 100px;
         border-bottom: 2px solid var(--backBtn-hover-bg);
     }
     .description .info {
-        font-size: 15px;
+        font-size: var(--small-font-size);
         padding: 0 12px;
     }
     #specsText {
-        font-size: 14px;
+        font-size: var(--smaller-font-size);
     }
     #text {
-        font-size: 18px;
+        font-size: var(--middle-font-size);
     }
     #productDes {
-        font-size: 14px;
+        font-size: var(--smaller-font-size);
     }
     #addToCart {
         width: 82%;
@@ -344,11 +356,11 @@ body {
         border-radius: 16px;
     }
     .name {
-        font-size: 19px;
+        font-size: var(--middle-font-size);
     }
     .price {
         align-items: flex-end;
-        font-size: 36px;
+        font-size: var(--largest-fonst-size);
     }
     .coin {
         font-size: 25px;
@@ -357,7 +369,7 @@ body {
         position: absolute;
         top: 180px;
         right: 2vw;
-        font-size: 36px;
+        font-size: var(--largest-fonst-size);
         width: 51vw;
         display: flex;
         justify-content: flex-start;
@@ -366,14 +378,14 @@ body {
         border-radius: 16px;
     }
     .description .info {
-        font-size: 14px;
+        font-size: var(--smaller-font-size);
         padding: 0 12px;
     }
     #text {
-        font-size: 18px;
+        font-size: var(--middle-font-size);
     }
     #productDes {
-        font-size: 14px;
+        font-size: var(--smaller-font-size);
     }
     #addToCart {
         padding: 14px 32px;
@@ -443,7 +455,7 @@ body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: var(--small-font-size);
     height: 34px;
     padding: 0 19px;
     transition: 0.3s;
@@ -454,8 +466,8 @@ body {
     background-color: var(--mainBtn-hover-bg);
 }
 .sureBox h3 {
-    color: var(--main);
-    font-size: 18px;
+    color: #1d1f1c;
+    font-size: var(--middle-font-size);
     position: relative;
     top: 16px;
 }
@@ -481,7 +493,7 @@ body {
     border-radius: 12px;
 }
 .productInfoForSureBox p {
-    font-size: 16px;
+    font-size: var(--small-font-size);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -519,7 +531,7 @@ body {
     margin-bottom: 15px;
 }
 .sureContainer p {
-    font-size: 15px !important;
+    font-size: var(--small-font-size) !important;
 }
 .Btns button {
     background-color: var(--mainBtn-bg);
@@ -527,7 +539,7 @@ body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: var(--small-font-size);
     height: 34px;
     padding: 0 8px;
     transition: 0.3s;

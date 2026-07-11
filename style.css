@@ -9,13 +9,19 @@
     --nav-btn-hover: #af941a;
     --favouriteIcon-color: rgb(235, 11, 11);
     --welcomeBox-bg: #ffb834;
+    --largest-fonst-size: 30px;
+    --larger-font-size: 24px;
+    --large-font-size: 22px;
+    --middle-font-size: 18px;
+    --small-font-size: 16px;
+    --smaller-font-size: 14px;
+    --smallest-font-size: 10px;
 }
 * {
     font-weight: 600;
     cursor: default;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    z-index: 3;
-    color: #222;
+    z-index: 5;
 }
 body {
     overflow-x: hidden;
@@ -36,6 +42,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--white);
 }
 .logo {
     display: flex;
@@ -48,21 +55,21 @@ a {
     height: 40px;
 }
 .logo a {
-    color: #fff;
-    font-size: 18px;
+    color: var(--white);
+    font-size: var(--large-font-size);
     cursor: default;
 }
 input[type="search"] {
-    background-color: var(--white);
-    border: none;
+    background-color: #FFFFFF;
+    border: 1px solid var(--white);
     outline: none;
-    max-width: 200px;
+    max-width: fit-content;
     width: 90vw;
     height: 5vh;
     max-height: 50px;
     box-sizing: border-box;
     padding: 0 16px 0 8px;
-    font-size: 16px;
+    font-size: var(--small-font-size);
     cursor: text;
     border-radius: 25px;
     z-index: 0;
@@ -87,7 +94,7 @@ input[type="search"] {
     width: 5.5vh;
     max-width: 50px;
     border-radius: 50%;
-    font-size: 10px;
+    font-size: var(--smallest-font-size);
     opacity: 0;
     transition: 0.3s;
 }
@@ -100,11 +107,11 @@ input[type="search"] {
     right: 16px;
     background-color: transparent;
     border: none;
-    font-size: 18px;
+    font-size: var(--large-font-size);
     color: var(--main);
 }
 #settingsBtnIcon {
-    color: #fff;
+    color: var(--white);
     cursor: pointer;
 }
 #settingsBtnIcon:hover, #icon:hover {
@@ -137,7 +144,7 @@ input[type="search"] {
     display: flex;
     gap: 24px;
     z-index: 1;
-    background-color: #3a4e61;
+    background-color: #FFFFFF;
     width: 94vw;
     max-width: 820px;
     overflow: hidden;
@@ -171,6 +178,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid var(--white);
 }
 #focus {
     color: var(--font-color);
@@ -206,8 +214,8 @@ b {
     height: 13px;
     background-color: rgb(235, 11, 11);
     border-radius: 50%;
-    color: var(--white);
-    font-size: 10px;
+    color: #FFFFFF;
+    font-size: var(--smallest-font-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,11 +243,11 @@ b {
     display: flex;
     gap: 8px;
     overflow: auto;
-    background-color: var(--white);
+    background-color: #FFFFFF;
     padding: 6px 9px;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--main);
+    border-bottom: 1px solid #1d1f1c;
 }
 .filterBtns::-webkit-scrollbar {
     display: none;
@@ -247,22 +255,22 @@ b {
 }
 .filterBtns button {
     padding: 4px 9px;
-    border: 1px solid var(--main);
+    border: 1px solid #1d1f1c;
     background-color: transparent;
-    color: var(--main);
+    color: #1d1f1c;
     border-radius: 22px;
-    font-size: 13px;
+    font-size: var(--smaller-font-size);
     white-space: nowrap;
 }
 .filterBtn.active {
-    background-color: var(--main);
-    color: var(--white);
+    background-color: #1d1f1c;
+    color: #FFFFFF;
 }
 .productCard {
     width: 46vw;
     max-width: 240px;
     border-radius: 8px;
-    box-shadow: 0 0 4px var(--main);
+    box-shadow: 0 0 4px #1d1f1c;
     height: 78vw;
     max-height: 380px;
     padding: 2px;
@@ -293,7 +301,7 @@ b {
     margin-top: 7px;
     display: flex;
     align-items: center;
-    font-size: 21px;
+    font-size: var(--large-font-size);
     display: flex;
     gap: 6px;
 }
@@ -326,12 +334,12 @@ img {
     border: none;
     margin-bottom: 5px;
     background: var(--font-color);
-    color: var(--main);
-    border: 1px solid var(--main);
+    color: #1d1f1c;
+    border: 1px solid #FFFFFF;
     position: relative;
     z-index: 3000;
     cursor: pointer;
-    font-size: 15px;
+    font-size: var(--small-font-size);
 }
 .productCard .buttons #addToCart:hover {
     border: 2px solid var(--nav-btn-hover);
@@ -344,13 +352,13 @@ img {
     margin-bottom: 5px;
     background: #fff !important;
     color: var(--main);
-    border: 1px solid var(--main);
+    border: 1px solid #1d1f1c;
     position: relative;
     z-index: 3000;
     background: var(--settingCard-hover);
 }
 .productCard .buttons #addToFavourite:hover {
-    border: 2px solid var(--main);
+    border: 2px solid #1d1f1c;
 }
 .productCard .buttons #addToFavourite i {
     color: var(--favouriteIcon-color);
@@ -370,7 +378,7 @@ img {
     box-sizing: border-box;
     padding-top: 50px;
     padding-bottom: 90px;
-    background-color: var(--white);
+    background-color: #FFFFFF;
     overflow: auto;
     display: none;
 }
@@ -391,7 +399,7 @@ img {
 }
 .notFoundMassege span, .loadingBox span {
     margin-top: 60px;
-    font-size: 18px;
+    font-size: var(--middle-font-size);
 }
 .notFoundMassege button {
     margin-top: 32px;
@@ -416,8 +424,8 @@ img {
     background-color: var(--white);
     animation: appearSettingsBox 0.2s linear forwards;
     border-radius: 16px;
-    width: 200px;
-    height: 220px;
+    width: 220px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -437,9 +445,9 @@ img {
     height: 25%;
     cursor: pointer;
     padding: 0 6px;
-    font-size: 14px;
+    font-size: var(--small-font-size);
 }
-.settingCard a {
+.settingCard a, .settingCard b {
     color: var(--main);
     animation: none;
 }
@@ -447,10 +455,7 @@ img {
     border-top: 2px solid;
     border-bottom: 2px solid;
 }
-#socialMediaCard {
-    border-bottom: 2px solid;
-}
-#myDataCard {
+#socialMediaCard, #myDataCard, #removeAllDataBaseBtn {
     border-bottom: 2px solid;
 }
 .settingCard:hover {
@@ -477,8 +482,12 @@ img {
     align-items: center;
     box-shadow: 0 0 12px #222;
 }
+.confirmation h3 {
+    color: var(--main);
+}
 .confirmation p {
-    font-size: 14px;
+    font-size: var(--smaller-font-size);
+    color: var(--main);
 }
 .confirmation .buttons {
     position: absolute;
@@ -493,7 +502,7 @@ img {
     color: var(--white);
     padding: 8px 20px;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: var(--smaller-font-size);
     box-sizing: border-box;
 }
 #noBtn {

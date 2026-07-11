@@ -4,53 +4,44 @@ let searchBtn = document.getElementById("searchButton");
 let productsCon = document.querySelector(".productsContianer");
 let div = document.createElement("div");
 div.className = "settingsBox";
-let settingCard = document.createElement("a");
-settingCard.className = "settingCard";
-settingCard.href = "conditions.html";
-let conditions = document.createElement("b");
-conditions.textContent = "الشروط والأحكام";
-let conditionsIcon = document.createElement("i");
-conditionsIcon.className = "fa-solid fa-circle-info";
-let settingCard2 = document.createElement("a");
-settingCard2.className = "settingCard";
-settingCard2.href = "paymentInfo.html";
-let payment = document.createElement("b");
-payment.textContent = "الدفع و الاستلام"
-settingCard2.id = "paymentCard";
-let paymentIcon = document.createElement("i");
-paymentIcon.className = "fa-regular fa-credit-card";
-let settingCard3 = document.createElement("a");
-settingCard3.className = "settingCard";
-settingCard3.href = "myData.html";
-settingCard3.id = "myDataCard";
-let MyData = document.createElement("b");
-MyData.textContent = "بياناتي";
-let MyDataIcon = document.createElement("i");
-MyDataIcon.className = "fa-regular fa-user";
-let settingCard4 = document.createElement("a");
-settingCard4.className = "settingCard";
-let socailMedia = document.createElement("b");
-socailMedia.textContent = "وسائل التواصل الاجتماعي";
-settingCard4.id = "socialMediaCard";
-let socailMediaIcon = document.createElement("i");
-socailMediaIcon.className = "fa-brands fa-whatsapp";
-let settingCard5 = document.createElement("a");
-settingCard5.className = "settingCard";
-let datas = document.createElement("b");
-datas.textContent = "حذف سجل البيانات";
-let datasIcon = document.createElement("i");
-datasIcon.className = "fa fa-database";
+div.innerHTML = `
+    <a class="settingCard" href="conditions.html">
+        <b>الشروط والأحكام</b>
+        <i class="fa-solid fa-circle-info"></i>
+    </a>
+
+    <a class="settingCard" href="paymentInfo.html" id="paymentCard">
+        <b>الدفع و الاستلام</b>
+        <i class="fa-regular fa-credit-card"></i>
+    </a>
+
+    <a class="settingCard" href="myData.html" id="myDataCard">
+        <b>بياناتي</b>
+        <i class="fa-regular fa-user"></i>
+    </a>
+
+    <a class="settingCard" href="" id="socialMediaCard">
+        <b>وسائل التواصل الاجتماعي</b>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a class="settingCard" id="removeAllDataBaseBtn"
+    onclick="div.remove(); document.body.appendChild(confirmation);">
+        <b>حذف سجل البيانات</b>
+        <i class="fa-solid fa-database"></i>
+    </a>
+
+    <a class="settingCard" href="moreSettings.html">
+        <b>المزيد</b>
+        <i class="fa-solid fa-chevron-left"></i>
+    </a>
+`;
+
 let turn = false;
 if (settingsBtn) {
     settingsBtn.addEventListener("click", (e) => {
         if (!turn) {
             settingsBtn.appendChild(div);
-            div.append(settingCard, settingCard2, settingCard3, settingCard4, settingCard5);
-            settingCard.append(conditions, conditionsIcon);
-            settingCard2.append(payment, paymentIcon);
-            settingCard3.append(MyData, MyDataIcon);
-            settingCard4.append(socailMedia, socailMediaIcon);
-            settingCard5.append(datas, datasIcon);
             e.stopPropagation();
             turn = true;
         } else {
@@ -121,8 +112,8 @@ if (productsCon) {
         })
         .catch(err => console.log(err));
 
-    fetch("")
 }
+
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let searchContianer = document.querySelector(".searchContianer");
 let timer = null;
@@ -146,9 +137,7 @@ function removeAllDatas() {
     alert("تم حذف جميع بياناتك بنجاح");
     location.reload();
 }
-settingCard5.onclick = () => {
-    document.body.appendChild(confirmation);
-};
+
 function clearText(text) {
     text = text.replaceAll("ة", "ه");
     text = text.replaceAll("ي", "ى");

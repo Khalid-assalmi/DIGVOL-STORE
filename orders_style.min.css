@@ -1,3 +1,7 @@
+:root {
+    --smaller-font-size: 14px;
+    --middle-font-size: 18px;
+}
 .ordersContainer {
     display: flex;
     flex-direction: column;
@@ -15,6 +19,7 @@
 }
 .ordersContainer h3 {
     align-self: flex-start;
+    font-size: var(--middle-font-size);
 }
 .productInOrdersCard {
     width: 92.4vw;
@@ -39,7 +44,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: var(--smaller-font-size);
 }
 .productInOrdersCard button {
     position: absolute;
@@ -58,8 +63,8 @@
     position: absolute;
     top: 20px;
     left: 15px;
-    background-color: var(--white);
-    border: 1px solid var(--main);
+    background-color: transparent;
+    border: 1px solid #1d1f1c;
     border-radius: 21px;
     padding: 1px 4px;
     display: flex;

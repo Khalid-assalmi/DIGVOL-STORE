@@ -26,6 +26,7 @@ function productState(index) {
         info: [
             {
                 img: orders[index].info[0].img,
+                name: orders[index].info[0].name,
                 des: orders[index].info[0].des,
                 price: orders[index].info[0].price,
                 pCode: orders[index].info[0].pCode,

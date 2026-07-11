@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGVOL STORE / More Settings</title>
+    <link rel="stylesheet" href="myData.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body dir="rtl">
+    <div class="top">
+        <button class="backBtn" onclick="window.history.go(-1)"><i class="fa-solid fa-arrow-right"></i></button>
+        <h3>المزيد من الإعدادات</h3>
+    </div>
+
+    <main class="settings">
+
+        <div class="fontSize">
+            <h3>حجم الخط:</h3>
+            <div class="textBox">تخصيص حجم الخط</div>
+            <div class="fontSizeInfo">
+                <b id="min">A</b>
+                <input type="range" id="fontSizeInp" value="50" min="0" max="100" onchange="fontSettings();"/>
+                <b id="big">A</b>
+            </div>
+            <b id="inpValue">50</b>
+        </div>
+
+        <hr>
+
+        <div class="customizeUI">
+            <h3>تخصيص واجهة المستخدم:</h3>
+
+            <div class="customizeUICard" id="mainUI" onclick="UIsetting('main', document.querySelector('#mainUI'))">
+                <img src="#"/>
+                <div>
+                    <h4>الرئيسية</h4>
+                    <small>الواجهة والهوية البصرية الفنية والعصرية الخاصة  ب DIGVOL STORE</small>
+                </div>
+            </div>
+
+            <div class="customizeUICard" id="secondaryUI" onclick="UIsetting('secondary', document.querySelector('#secondaryUI'))">
+                <img src="#"/>
+                <div>
+                    <h4>الفرعية</h4>
+                    <small>التصميم العصري الهادئ و الحديث الخاص ب DIGVOL STORE</small>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="customizeProductCard">
+            <h3>تخصيص تصميم بطاقة عرض المنتج:</h3>
+            <div>
+                <div class="card main"><img src="" alt="بطاقة كاملة"></div>
+                <div class="card"><img src="" alt="بطاقة بدون زر اضافة إلى المفضلة"></div>
+                <div class="card"><img src="" alt="بطاقة بدون زر إضافة إلى السلة"></div>
+                <div class="card"><img src="" alt="بطاقة خالية من الأزرار"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 جميع الحقوق محفوظة DIGVOL Tech
+    </footer>
+
+    <script src="myData.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

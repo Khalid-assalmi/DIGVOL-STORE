@@ -1,3 +1,12 @@
+:root {
+    --largest-fonst-size: 30px;
+    --larger-font-size: 24px;
+    --large-font-size: 22px;
+    --middle-font-size: 18px;
+    --small-font-size: 16px;
+    --smaller-font-size: 14px;
+    --smallest-font-size: 10px;
+}
 .peymentCheckBox {
     position: fixed;
     bottom: 0;
@@ -21,7 +30,7 @@
 #questionForPayment {
     position: fixed;
     top: 30px;
-    font-size: 21px;
+    font-size: var(--large-font-size);
 }
 .peymentInfo {
     display: flex;
@@ -30,7 +39,7 @@
     position: fixed;
     right: 20px;
     bottom: 20px;
-    font-size: 18px;
+    font-size: var(--middle-font-size);
 }
 .buttons {
     display: flex;
@@ -46,7 +55,7 @@
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: var(--small);
     height: 34px;
     padding: 0 14px;
     transition: 0.3s;
@@ -96,22 +105,22 @@
 }
 @media (max-width: 680px) {
     .peymentInfo.finallyCheckPaymentInfo {
-        font-size: 17px;
+        font-size: var(--middle-font-size);
     }
     #confirmForSendTheOrder {
         padding: 0 20px;
     }
     #confirmForSendTheOrder a {
-        font-size: 15px;
+        font-size: var(--small-font-size);
         line-height: 30px;
     }
 }
 @media (min-width: 681px) {
     .peymentInfo.finallyCheckPaymentInfo {
-        font-size: 20px;
+        font-size: var(--large-font-size);
     }
     #confirmForSendTheOrder {
-        font-size: 18px;
+        font-size: var(--middle-font-size);
     }
 }
 .container {

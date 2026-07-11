@@ -131,6 +131,7 @@ function confirmOrder() {
             info: [
                 {
                     img: cart[i].img,
+                    name: cart[i].name,
                     des: cart[i].des,
                     price: cart[i].price,
                     pCode: cart[i].pCode,

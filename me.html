@@ -13,7 +13,7 @@
 <body dir="rtl">
     <div class="top">
         <div class="userInfo" onclick="window.location.href = 'myData.html'">
-            <div class="userName"></div>
+            <label class="userName" style="font-size: var(--small-font-size);"></label>
             <div id="firstLaterContainer"></div>
         </div>
         <div class="tools" style="gap: 26px;">
@@ -23,13 +23,14 @@
     </div>
     <div class="myPurchasesContainer">
         <i class="fa fa-basket-shopping"></i>
-        <b><h3>لا توجد منتجات في قسم المشتريات!</h3></b>
+        <b><h3 style="font-size: var(--middle-font-size);">لا توجد منتجات في قسم المشتريات!</h3></b>
     </div>
     <h3
     style="
     position: relative;
     z-index: -1;
     justify-self: flex-start;
+    font-size: var(--middle-font-size);
     "
     >
     - منتجات قد تنال إعجابك:
@@ -37,9 +38,9 @@
     <div id="allProducts" hidden></div><!--هذا العنصر يعمل عنوان معرف عرض كامل المنتجات من اجل ان تعمل دالة العرض -->
     <div class="productsContianer" id="productsContianerInMeSection"></div>
     <nav>
-        <a href="index.html" title="الرئيسية"><b><i class="fa-solid fa-home"></i><span class="hiddenText">الرئيسية</span></b></a>
+        <a href="index.html" title="الرئيسية"><b><i class="fa-regular fa-home"></i><span class="hiddenText">الرئيسية</span></b></a>
         <a href="ShoppingCart.html" title="السلة"><b><i class="fa-solid fa-shopping-cart"></i><span class="hiddenText">السلة</span></b> <span class="totalCircle" id="totalOfNewProductsInCart">0</span> </a>
-        <a href="favourites.html" title="المفضلة"><b><i class="fa-solid fa-heart"></i><span class="hiddenText">المفضلة</span></b> <span class="totalCircle" id="totalOfNewFavouriteProducts">0</span> </a>
+        <a href="favourites.html" title="المفضلة"><b><i class="fa-regular fa-heart"></i><span class="hiddenText">المفضلة</span></b> <span class="totalCircle" id="totalOfNewFavouriteProducts">0</span> </a>
         <a href="orders.html" title="طلباتي"><b><i class="fa-solid fa-truck-fast"></i><span class="hiddenText">طلباتي</span></b></a>
         <a href="me.html" title="أنا"><b><i class="fa-solid fa-user" id="focus"></i><span id="focus" class="hiddenText">أنا</span></b></a>
     </nav>
@@ -48,5 +49,6 @@
     <script src="myData.js"></script>
     <script src="payment.js"></script>
     <script src="orders.js"></script>
+    <script src="settings.js"></script>
 </body>
 </html>

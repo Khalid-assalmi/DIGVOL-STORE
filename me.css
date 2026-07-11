@@ -1,3 +1,7 @@
+:root {
+    --smaller-font-size: 14px;
+    --white: #FFFFFF;
+}
 .myPurchasesContainer {
     border: 2px solid #c0c0c0;
     border-radius: 16px;
@@ -33,7 +37,7 @@
 .productInPurchasesCard p {
     position: static;
     width: 59vw;
-    font-size: 14px;
+    font-size: var(--smaller-font-size);
 }
 .productInPurchasesCard h6 {
     position: static;
@@ -67,13 +71,13 @@ body {
     gap: 7px;
     padding: 2px 7px 2px 2px;
     align-items: center;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     border-radius: 25px;
     color: rgb(235, 9, 9);
     cursor: pointer;
 }
 .userName {
-    color: #fff;
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;

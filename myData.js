@@ -60,7 +60,7 @@ if (saveButton) {
             address: address
         };
         if (name === "" || email === "" || phone === "") {
-            alert("Please fill in all fields.");
+            showAlert("الرجاء تعبئة جميع الحقول للاستئناف!")
         } else {
             info.push(userInfo);
             localStorage.setItem("info", JSON.stringify(info));
