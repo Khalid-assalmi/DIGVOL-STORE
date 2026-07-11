@@ -267,7 +267,7 @@ b {
     color: #FFFFFF;
 }
 .productCard {
-    width: 45vw;
+    width: 46vw;
     max-width: 240px;
     border-radius: 8px;
     box-shadow: 0 0 4px #1d1f1c;
@@ -511,6 +511,17 @@ img {
 }
 .confirmation button:hover {
     border: 1px solid #222;
+}
+.favouritesCon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 5px;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    bottom: 49px;
+    right: 0;
 }
 @keyframes appear {
     from {

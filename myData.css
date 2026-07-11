@@ -132,7 +132,7 @@ input:focus, select:focus {
 .settings .fontSizeInfo input {
     accent-color: #1d1f1c;
     cursor: pointer;
-    width: 85%;
+    width: 90%;
     max-width: 400px;
     padding: 0;
 }
@@ -205,10 +205,10 @@ input:focus, select:focus {
     margin-bottom: 20px;
 }
 .customizeProductCard div .card {
-    width: 45vw;
-    height: 58vw;
-    max-width: 220px;
-    max-height: 320px;
+    width: 44vw;
+    height: 56vw;
+    max-width: 210px;
+    max-height: 310px;
     border: 1px solid var(--gray);
     border-radius: 8px;
     transition: 0.3s;
