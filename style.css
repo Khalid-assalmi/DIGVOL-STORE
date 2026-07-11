@@ -42,7 +42,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid #1d1f1c;
 }
 .logo {
     display: flex;
@@ -63,7 +63,7 @@ input[type="search"] {
     background-color: #FFFFFF;
     border: 1px solid var(--white);
     outline: none;
-    max-width: fit-content;
+    max-width: 240px;
     width: 90vw;
     height: 5vh;
     max-height: 50px;
@@ -178,7 +178,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid var(--white);
+    border-top: 1px solid #1d1f1c;
 }
 #focus {
     color: var(--font-color);

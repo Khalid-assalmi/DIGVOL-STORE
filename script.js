@@ -33,7 +33,7 @@ div.innerHTML = `
 
     <a class="settingCard" href="moreSettings.html">
         <b>المزيد</b>
-        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-chevron-right"></i>
     </a>
 `;
 
