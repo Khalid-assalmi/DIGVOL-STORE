@@ -63,7 +63,7 @@ input[type="search"] {
     background-color: #FFFFFF;
     border: 1px solid var(--white);
     outline: none;
-    max-width: 240px;
+    max-width: 210px;
     width: 90vw;
     height: 5vh;
     max-height: 50px;
