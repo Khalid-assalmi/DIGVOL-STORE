@@ -97,12 +97,10 @@ function UIsetting(mode, element) {
     if (mode == "main") {
         document.documentElement.style.removeProperty("--main");
         document.documentElement.style.removeProperty("--white");
-        document.documentElement.style.removeProperty("--settingCard-hover");
         document.documentElement.style.removeProperty("--search-button-hover");
     } else if (mode == "secondary") {
         document.documentElement.style.setProperty("--main", "#FFF");
         document.documentElement.style.setProperty("--white", "#1d1f1c");
-        document.documentElement.style.setProperty("--settingCard-hover", "#1a1a1a");
         document.documentElement.style.setProperty("--search-button-hover", "#dddddd")
     }
     localStorage.setItem("UImode", mode);

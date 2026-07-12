@@ -217,7 +217,7 @@ body {
     right: 0;
     left: 0;
     height: 60px;
-    background-color: var(--white);
+    background-color: #ffffff;
     border-top: 2px solid var(--emptyBox-color);
     display: flex;
     justify-content: space-between;
@@ -231,7 +231,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--main);
+    color: #1d1f1c;
     font-size: var(--middle-font-size);
 }
 .total button {
@@ -328,7 +328,7 @@ body {
     .productImage {
         width: 40vw;
         max-width: 600px;
-        height: 73%;
+        height: 70%;
         max-height: 700px;
         position: fixed;
         top: 50px;

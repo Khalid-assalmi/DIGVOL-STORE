@@ -53,6 +53,7 @@ a {
 .logo img {
     width: 40px;
     height: 40px;
+    border-radius: 25px;
 }
 .logo a {
     color: var(--white);
@@ -243,7 +244,7 @@ b {
     display: flex;
     gap: 8px;
     overflow: auto;
-    background-color: var(--white);
+    background-color: #ffffff;
     padding: 6px 9px;
     width: 100%;
     box-sizing: border-box;
@@ -255,23 +256,23 @@ b {
 }
 .filterBtns button {
     padding: 4px 9px;
-    border: 1px solid var(--main);
+    border: 1px solid #1d1f1c;
     background-color: transparent;
-    color: var(--main);
+    color: #1d1f1c;
     border-radius: 22px;
     font-size: var(--smaller-font-size);
     white-space: nowrap;
 }
 .filterBtn.active {
-    background-color: var(--main);
-    color: var(--white);
+    background-color: #1d1f1c;
+    color: #ffffff;
 }
 .productCard {
     width: 46vw;
     max-width: 240px;
     border-radius: 8px;
     box-shadow: 0 0 4px #1d1f1c;
-    height: 78vw;
+    height: auto;
     max-height: 380px;
     padding: 2px;
     position: relative;
@@ -422,7 +423,7 @@ img {
     position: fixed;
     top: 42px;
     right: 24px;
-    background-color: var(--white);
+    background-color: #FFFFFF;
     animation: appearSettingsBox 0.2s linear forwards;
     border-radius: 16px;
     width: 220px;
@@ -450,7 +451,7 @@ img {
     font-size: var(--small-font-size);
 }
 .settingCard a, .settingCard b {
-    color: var(--main);
+    color: #1d1f1c;
     animation: none;
 }
 #paymentCard {
@@ -464,13 +465,13 @@ img {
     background-color: var(--settingCard-hover);
 }
 .settingCard i {
-    color: var(--main)
+    color: #1d1f1c;
 }
 .confirmation {
     position: fixed;
     top: 32vh;
     justify-self: center;
-    background-color: var(--white);
+    background-color: #FFFFFF;
     width: 90vw;
     height: 35vh;
     max-width: 480px;
@@ -485,11 +486,11 @@ img {
     box-shadow: 0 0 12px #222;
 }
 .confirmation h3 {
-    color: var(--main);
+    color: #1d1f1c;
 }
 .confirmation p {
     font-size: var(--smaller-font-size);
-    color: var(--main);
+    color: #1d1f1c;
 }
 .confirmation .buttons {
     position: absolute;
@@ -524,6 +525,7 @@ img {
     left: 0;
     bottom: 49px;
     right: 0;
+    z-index: 0;;
 }
 @keyframes appear {
     from {
