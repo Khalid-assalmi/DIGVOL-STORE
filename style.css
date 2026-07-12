@@ -243,7 +243,7 @@ b {
     display: flex;
     gap: 8px;
     overflow: auto;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     padding: 6px 9px;
     width: 100%;
     box-sizing: border-box;
@@ -255,16 +255,16 @@ b {
 }
 .filterBtns button {
     padding: 4px 9px;
-    border: 1px solid #1d1f1c;
+    border: 1px solid var(--main);
     background-color: transparent;
-    color: #1d1f1c;
+    color: var(--main);
     border-radius: 22px;
     font-size: var(--smaller-font-size);
     white-space: nowrap;
 }
 .filterBtn.active {
-    background-color: #1d1f1c;
-    color: #FFFFFF;
+    background-color: var(--main);
+    color: var(--white);
 }
 .productCard {
     width: 46vw;
@@ -322,6 +322,7 @@ img {
 .productCard .buttons {
     display: flex;
     align-self: center;
+    justify-content: center;
     width: 97%;
     height: 10%;
     gap: 1%;
@@ -331,7 +332,6 @@ img {
     width: 82%;
     height: 98%;
     border-radius: 8px;
-    border: none;
     margin-bottom: 5px;
     background: var(--font-color);
     color: #1d1f1c;
@@ -356,6 +356,7 @@ img {
     position: relative;
     z-index: 3000;
     background: var(--settingCard-hover);
+    flex: 0.6;
 }
 .productCard .buttons #addToFavourite:hover {
     border: 2px solid #1d1f1c;
@@ -433,6 +434,7 @@ img {
     box-shadow: 0 0 12px #222;
     overflow: hidden;
     padding: 16px;
+    z-index: 9999;
 }
 .hide {
     animation: hideSettingsBox 1s linear reverse forwards;

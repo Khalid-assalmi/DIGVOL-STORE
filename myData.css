@@ -17,6 +17,10 @@
     --smaller-font-size: 14px;
     --smallest-font-size: 10px;
 }
+* {
+    font-weight: 600;
+    z-index: 1000;
+}
 body {
     cursor: default;
     margin: 0;
@@ -33,7 +37,7 @@ button {
     padding: 5px 10px;
     display: flex;
     gap: 14px;
-    z-index: 10;
+    z-index: 9999;
     border-bottom: 1px solid var(--white);
 }
 .backBtn {
@@ -45,6 +49,7 @@ button {
 .top h3 {
     color: var(--white);
     font-size: var(--middle-font-size);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .inputs {
     margin-top: 25vh;
@@ -149,8 +154,12 @@ input:focus, select:focus {
     justify-content: space-between;
     align-items: center;
 }
+.fontSize h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .textBox {
     font-size: var(--middle-font-size);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .settings hr {
     width: 100%;
@@ -160,6 +169,7 @@ input:focus, select:focus {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .customizeUICard {
     padding: 3px;
@@ -186,7 +196,7 @@ input:focus, select:focus {
 }
 .customizeUICard:hover, .customizeProductCard div .card:hover {
     transform: scale(1.02);
-    border-color: var(--search-button-hover);
+    border-width: 2px;
 }
 .customizeUICard div h4 {
     font-size: var(--small-font-size);
@@ -196,22 +206,110 @@ input:focus, select:focus {
 }
 .customizeProductCard h3 {
     font-size: var(--middle-font-size);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .customizeProductCard div {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 20px;
+    gap: 5px;
 }
-.customizeProductCard div .card {
-    width: 44vw;
-    height: 56vw;
-    max-width: 210px;
-    max-height: 310px;
-    border: 1px solid var(--gray);
-    border-radius: 8px;
+.customizeProductCard div .card:hover {
     transition: 0.3s;
+}
+.productCard {
+    width: 46vw;
+    max-width: 240px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px #1d1f1c;
+    height: 78vw;
+    max-height: 380px;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    cursor: default;
+    box-sizing: border-box;
+}
+.productCard.main {
+    border: 2px solid rgb(38, 96, 223);
+    padding: 0;
+}
+.imgBox {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: var(--emptyBox-color);
+    animation: load 1s linear 1s infinite forwards;
+}
+.priceBox {
+    border-radius: 9px;
+    margin-right: 7px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    font-size: var(--large-font-size);
+    display: flex;
+    gap: 6px;
+}
+.nameBox {
+    border-radius: 9px;
+    margin-right: 7px;
+    width: 94%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.productCard .buttons {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 97%;
+    height: 10%;
+    gap: 1%;
+    margin-bottom: 1.5%;
+    flex-wrap: nowrap;
+}
+.productCard .buttons #addToCart {
+    height: 98%;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    background: var(--font-color);
+    color: #1d1f1c;
+    border: 1px solid #FFFFFF;
+    position: relative;
+    z-index: 3000;
+    cursor: pointer;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+    flex: 4.5;
+}
+.productCard .buttons #addToCart:hover {
+    border: 2px solid var(--nav-btn-hover);
+}
+.productCard .buttons #addToFavourite {
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+    background: #fff !important;
+    color: var(--main);
+    border: 1px solid #1d1f1c;
+    position: relative;
+    z-index: 3000;
+    background: var(--settingCard-hover);
+    cursor: default;
+    flex: 0.6;
+}
+.productCard .buttons #addToFavourite:hover {
+    border: 2px solid #1d1f1c;
+}
+.productCard .buttons #addToFavourite i {
+    color: var(--favouriteIcon-color);
 }
 footer {
     display: flex;
